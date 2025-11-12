@@ -42,9 +42,11 @@ const SingleProduct = () => {
 
   return (
     <div className="single-product-container">
-      <Link to="/" className="back-button">← Back to Products</Link>
+      <Link to="/products" className="back-button">← Back to Products</Link>
 
+      
       <Link to="/cart" className="floating-cart">🛒 Cart</Link>
+
 
       <div className="product-details">
         <div className="product-image-section">

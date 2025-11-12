@@ -8,6 +8,8 @@ import SingleProduct from './components/SingleProduct';
 import CartPage from './components/CartPage';
 import { CartProvider } from './context/CartContext';
 import CheckoutPage from './components/CheckoutPage';
+import MainHome from './home/MainHome';
+import FormPage from './components/Forms/FormPage';
 
 
 
@@ -16,12 +18,13 @@ function App() {
     <CartProvider>
     <Router>
       <Routes>
+        <Route path="/" element={<MainHome />}/>
         <Route path="/post" element={<PostSlider />}/>
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/" element={<ProductGrid />} />
+        <Route path="/products" element={<ProductGrid />} />
         <Route path="/product/:id" element={<SingleProduct />} />
         <Route path="/checkout" element={<CheckoutPage />} />
-
+        <Route path="/form" element={<FormPage />} />
       </Routes>
     </Router>
     </CartProvider>

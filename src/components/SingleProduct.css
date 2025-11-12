@@ -116,6 +116,8 @@ img.single-product-image {
   font-weight: bold;
 }
 
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .product-details {
