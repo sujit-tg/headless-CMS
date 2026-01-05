@@ -4,6 +4,8 @@ import "./MainHome.css";
 
 const MainHome = () => {
   return (
+
+    
     <div className="home-container">
       <header className="home-header">
         <h1>🏸 Welcome to Our Sports Store</h1>

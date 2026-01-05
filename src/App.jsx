@@ -10,13 +10,20 @@ import { CartProvider } from './context/CartContext';
 import CheckoutPage from './components/CheckoutPage';
 import MainHome from './home/MainHome';
 import FormPage from './components/Forms/FormPage';
+import AuthPage from './authentication/AuthPage';
+import ShopPage from './components/pages/ShopPage';
+import MainNav from './Header-Footer/MainNav';
+import Footer from './Header-Footer/Footer';
 
 
 
 function App() {
   return (
+    
     <CartProvider>
+      
     <Router>
+       <MainNav/>
       <Routes>
         <Route path="/" element={<MainHome />}/>
         <Route path="/post" element={<PostSlider />}/>
@@ -25,8 +32,12 @@ function App() {
         <Route path="/product/:id" element={<SingleProduct />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/form" element={<FormPage />} />
+        <Route path="/auth" element={<AuthPage />}/>
+        <Route path="/shop" element={<ShopPage />}/>
       </Routes>
+      <Footer/>
     </Router>
+    
     </CartProvider>
   );
 }

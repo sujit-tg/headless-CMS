@@ -1,0 +1,180 @@
+  /* HEADER WRAPPER */
+        .gos-header-wrapper {
+          width: 100%;
+          position: sticky;
+          top: 0;
+          z-index: 999;
+          background: #111;
+          color: #fff;
+        }
+        /* TOPBAR */
+        .gos-topbar {
+          background: linear-gradient(90deg, #0F0F0F, #222);
+          padding: 12px 0;
+        }
+        .gos-container {
+          max-width: 1300px;
+          margin: auto;
+          padding: 0 16px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+        /* LOGO */
+        .gos-logo img { height: 36px; }
+        /* SEARCH */
+        .gos-search {
+          flex: 1;
+          min-width: 200px;
+          position: relative;
+          margin: 8px 0;
+        }
+        .gos-search input {
+          width: 100%;
+          padding: 10px 44px 10px 16px;
+          border-radius: 4px;
+          border: none;
+          font-size: 14px;
+        }
+        .gos-search button {
+          position: absolute;
+          right: 12px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: #000;
+        }
+        /* ICONS */
+        .gos-icons { display: flex; align-items: center; gap: 14px; }
+        .icon-btn { background: none; border: none; color: #fff; cursor: pointer; position: relative; }
+        .badge {
+          position: absolute;
+          top: -6px;
+          right: -8px;
+          background: #D9FF00;
+          color: #000;
+          font-size: 11px;
+          font-weight: 700;
+          border-radius: 50%;
+          min-width: 18px;
+          height: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        /* NAV */
+        .gos-nav {
+          max-height: 0;
+          overflow: hidden;
+          background: #fff;
+          color: #111;
+          transition: max-height 0.3s ease;
+        }
+        .gos-nav.open { max-height: 500px; } /* adjust as needed */
+        .gos-nav-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          font-weight: 700;
+          font-size: 13px;
+        }
+        .gos-nav-list li {
+          padding: 14px 20px;
+          border-bottom: 1px solid #eee;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        /* DESKTOP */
+        @media (min-width: 769px) {
+          .desktop-only { display: block; }
+          .mobile-menu-btn { display: none; }
+          .gos-search { margin: 0 20px; max-width: 500px; }
+          .gos-nav { display: block; max-height: none; }
+          .gos-nav-list {
+            display: flex;
+            justify-content: center;
+            gap: 26px;
+            padding: 14px 0;
+          }
+          .gos-nav-list li { border: none; padding: 0; }
+        }
+        /* MOBILE */
+        @media (max-width: 768px) {
+          .desktop-only { display: none; }
+          .mobile-menu-btn { display: block; }
+          /* Container wraps items */
+          .gos-container {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 15px;
+          }
+          /* Top Row: Logo (Left) and Icons (Right) */
+          .gos-logo { order: 1; }
+          .gos-icons { order: 2; gap: 15px; }
+          /* Second Row: Search Bar */
+          .gos-search {
+            order: 3;
+            width: 100%;
+            margin: 10px 0 0 0;
+            min-width: 100%;
+          }
+        }
+
+
+        /* CART DRAWER */
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 360px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.15);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+}
+
+.cart-drawer.open {
+  right: 0;
+}
+
+.cart-drawer-header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-drawer-body {
+  flex: 1;
+  padding: 16px;
+}
+
+.cart-drawer-footer {
+  padding: 16px;
+  border-top: 1px solid #eee;
+}
+
+.view-cart-btn {
+  width: 100%;
+  padding: 12px;
+  background: #111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* OVERLAY */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1000;
+}

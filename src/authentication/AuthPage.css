@@ -1,0 +1,172 @@
+/* Background */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  overflow: hidden;
+}
+
+/* Floating animation background circles */
+.auth-container::before,
+.auth-container::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  filter: blur(120px);
+  animation: float 10s infinite alternate ease-in-out;
+}
+.auth-container::before {
+  top: 0;
+  left: 0;
+}
+.auth-container::after {
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes float {
+  from { transform: translateY(0px) translateX(0px); }
+  to { transform: translateY(60px) translateX(-60px); }
+}
+
+/* Card */
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  transition: transform 0.6s ease;
+  position: relative;
+}
+
+.auth-card.slide-left {
+  transform: translateX(-10px);
+}
+
+/* Switch */
+.switch-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  background: rgba(255,255,255,0.12);
+  padding: 5px;
+  border-radius: 40px;
+}
+
+.switch-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 40px;
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+}
+.switch-btn.active {
+  background: white;
+  color: black;
+}
+
+/* Title */
+.auth-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  animation: fade 0.6s ease;
+}
+
+/* Fade Animation */
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Message */
+.auth-message {
+  text-align: center;
+  color: #ff8b8b;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Inputs */
+.auth-input {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.18);
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+.auth-input:focus {
+  border-color: white;
+  background: rgba(255,255,255,0.25);
+}
+
+/* Button */
+.auth-submit {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: white;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.auth-submit:hover {
+  transform: scale(1.02);
+  background: #e8e8e8;
+}
+.auth-submit:disabled {
+  background: #777;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Link */
+.switch-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+.switch-link span {
+  color: #00d4ff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.switch-link span:hover {
+  text-decoration: underline;
+}
+
+/* Staggered animations */
+.fade-in { opacity: 0; animation: fadeIn 0.6s forwards; }
+.delay-2 { animation-delay: 0.15s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.45s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
